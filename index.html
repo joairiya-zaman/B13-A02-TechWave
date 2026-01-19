@@ -7,21 +7,55 @@
     <link rel="stylesheet" href="./styles.css">
     <title>TechWave</title>
 </head>
-<body>
+<body id="top" class="page">
 
-<header>
-        <nav>
-            
-        </nav>
+<header class="top-nav">
+    <nav class="nav-inner">
+        <a href="#top" class="logo-link">
+            <img src="./assets/TechWave.png" alt="TechWave logo" class="logo-img">
+        </a>
+
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#episodes">Episodes</a>
+            <a href="#host">Host</a>
+        </div>
+
+        <div class="nav-actions">
+            <button type="button" class="btn btn-gradient btn-animate desktop-only">Subscribe</button>
+            <button type="button" class="btn icon-btn btn-animate mobile-only">
+                <img src="./assets/hamburger-menu.png" alt="Menu" class="icon">
+            </button>
+        </div>
+    </nav>
 </header>
 
 <main>
+    <!-- banner -->
+    <section class="hero" style="background-image: url('./assets/hero-bg.png');">
+        <div class="hero-overlay"></div>
+        <div class="hero-inner">
+            <div class="hero-circle-wrap">
+                <img src="./assets/hero-circle.png" alt="Podcast circle" class="hero-circle">
+                <img src="./assets/microphone.png" alt="Microphone" class="hero-mic">
+                <span class="badge badge-breathe">NEW</span>
+            </div>
 
-</main>
+            <h1 class="hero-title">TechWave</h1>
+            <p class="hero-text">
+            Your daily dose of tech insights, productivity hacks, and personal growth.</p>
 
-<footer>
+            <div class="hero-actions">
+                <button type="button" class="btn btn-gradient btn-animate">
+                    <img src="./assets/spotify.png" alt="Spotify" class="icon">
+                    Listen On Spotify
+                </button>
+                <button type="button" class="btn btn-outline btn-animate">
+                    <span class="dot"></span>
+                    Subscribe
+                </button>
+            </div>
+        </div>
+    </section>
 
-</footer>
-
-</body>
-</html>
+ 
