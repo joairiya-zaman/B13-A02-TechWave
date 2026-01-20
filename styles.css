@@ -102,6 +102,10 @@ button {
     cursor: pointer;
 }
 
+.btn.mobile-only {
+    display: none;
+}
+
 .btn-gradient {
     background: linear-gradient(45deg, #F7E93F 0%, #FB09B4 50%, #9100F8 100%);
 }
@@ -161,16 +165,17 @@ button {
 .badge {
     position: absolute;
     top: 0;
-    right: 0;
+    right: auto;
     background: #30f27e;
     color: #000000;
-    font-size: 12px;
+    font-size: 0.8rem;
     font-weight: 600;
-    padding: 4px 10px;
+    padding: 6px 12px 4px;
     border-radius: 999px;
-    transform: translate(45%, -35%);
     letter-spacing: 0.4px;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    transform: translateY(0);
+    margin-right: -9rem;
 }
 
 .hero-title {
@@ -275,13 +280,13 @@ button {
 
 .feature-card {
     background: #24123f;
-     padding: 24px;
+    padding: 24px;
     border-radius: 24px;
     transition: transform 0.2s ease;
 }
 
 .feature-card:hover {
-     transform: translateY(-4px);
+    transform: translateY(-4px);
 }
 
 .feature-card h3 {
@@ -318,14 +323,14 @@ button {
 .episode-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+    gap: 24px;
     margin-top: 32px;
 }
 
 .episode-card {
     background: #24123f;
     border-radius: 24px;
- overflow: hidden;
+    overflow: hidden;
     transition: transform 0.2s ease;
 }
 
@@ -349,10 +354,11 @@ button {
     padding: 20px;
 }
 
- .episode-body h3 {
+.episode-body h3 {
     margin: 0;
     font-size: 14px;
 }
+
 .episode-body p {
     margin: 8px 0 0;
     font-size: 12px;
@@ -385,14 +391,13 @@ button {
     height: 104px;
     border-radius: 999px;
     object-fit: cover;
-
 }
-
 
 .host-card h3 {
     margin: 0;
     font-size: 20px;
 }
+
 .host-card p {
     margin: 8px 0 0;
     font-size: 13px;
@@ -409,8 +414,8 @@ button {
 .footer {
     background-color: #1A0B2E;
     background-image: url('./assets/footer-bg.png');
- background-size: cover;
-  background-position: center;
+    background-size: cover;
+    background-position: center;
     padding: 36px 0 40px;
     text-align: center;
 }
@@ -426,7 +431,6 @@ button {
     background-clip: text;
     color: transparent;
 }
-
 
 .footer-links {
     margin-top: 12px;
@@ -445,15 +449,11 @@ button {
     gap: 8px;
 }
 
-
-
 .footer-copy {
     margin-top: 14px;
     font-size: 13px;
     color: rgba(255, 255, 255, 0.75);
 }
-
-
 
 .icon {
     width: 16px;
@@ -472,24 +472,22 @@ button {
 }
 
 .host-socials .icon {
-    width: 40px;
-    height: 40px;
-     box-sizing: border-box;
-    border: 1px solid rgba(83, 60, 114, 1);
-    padding: 9px;
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    border: 1px solid rgb(83, 60, 114);
+    padding: 6px;
     border-radius: 999px;
-
     background: #1f1035;
 }
 
 
 .badge-breathe {
-    animation: badge-breathe 2.2s ease-in-out infinite;
+    animation: badge-float 2.2s ease-in-out infinite;
 }
 
 .btn-animate {
-    transition: transform 200ms ease, 
-    box-shadow 200ms ease, opacity 200ms ease;
+    transition: transform 200ms ease, box-shadow 200ms ease, opacity 200ms ease;
 }
 
 .btn-animate:hover {
@@ -499,7 +497,127 @@ button {
 
 .btn-animate:active {
     transform: translateY(0) scale(0.99);
-
     box-shadow: 0 4px 10px rgba(251, 9, 180, 0.12);
 }
 
+
+@keyframes badge-float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    .badge-breathe {
+        animation: none;
+    }
+
+    .btn-animate {
+        transition: none;
+    }
+
+    .btn-animate:hover,
+    .btn-animate:active {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-inner {
+        padding: 16px 16px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .desktop-only {
+        display: none;
+    }
+
+    .btn.mobile-only {
+        display: inline-flex;
+    }
+
+    .hero-inner {
+        padding: 64px 16px;
+    }
+
+    .hero-circle {
+        width: 176px;
+        height: 176px;
+    }
+
+    .hero-mic {
+        width: 64px;
+        height: 64px;
+    }
+
+    .hero-title {
+        font-size: 30px;
+    }
+
+    .hero-text {
+        font-size: 14px;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .badge {
+        top: 0;
+        right: auto;
+        margin-right: -8rem;
+    }
+
+    .container,
+    .container-narrow {
+        padding: 0 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .section-text {
+        font-size: 14px;
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .feature-grid {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
+    }
+
+    .episode-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .host-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .host-socials {
+        justify-content: center;
+    }
+
+    .footer-brand {
+        font-size: 44px;
+    }
+
+    .footer-links {
+        font-size: 12px;
+        
+    }
+}
