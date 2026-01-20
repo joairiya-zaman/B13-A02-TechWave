@@ -595,8 +595,12 @@ button {
     }
 
     .feature-grid {
-        grid-template-columns: 1fr;
-        grid-template-areas: none;
+        display: block;
+    }
+    
+    .feature-card {
+        width: 100%;
+        margin-bottom: 20px;
     }
 
     .episode-grid {
